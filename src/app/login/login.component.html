@@ -1,0 +1,16 @@
+<p>Login de Usuario</p>
+<form [formGroup]="myForm" (submit)="doSomething()">
+    <input type="text" class="form-control" formControlName="email" 
+    [ngClass]="{error: email}">
+    <span *ngIf="this.myForm.get('email')?.errors?.['email']"> Ingrese un email válido</span>
+    <span *ngIf="this.myForm.get('email')?.errors?.['required']"> (*)</span>
+    <span *ngIf="this.myForm.get('email')?.errors?.['minlength']"> Min 10</span>
+    <input type="password" class="form-control" formControlName="password" 
+    [ngClass]="{error: password}">
+    <span *ngIf="this.myForm.get('password')?.errors?.['required']"> Ingrese una contraseña</span>
+    <button type="submit"> Registrar </button>   
+</form>
+<div>
+    {{email}} <br>
+    {{password}}
+</div>

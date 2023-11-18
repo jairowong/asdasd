@@ -1,0 +1,30 @@
+<p>padre works!</p>
+
+<app-hijo (messageEvent)="reciveMessage($event)" [name]="'manuel'" [subname]="'perez'"></app-hijo> <br>
+esto viene del componente hijo={{messagePadre}} <br>
+esto viene del evento del componente hijo={{messageEvent}}<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Fullname
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of Usuario">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.fullname}}</td>
+
+        </tr>
+    </tbody>
+
+</table>
